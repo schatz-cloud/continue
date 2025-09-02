@@ -1238,7 +1238,6 @@ declare global {
   }
 
   export interface MemoryConfig {
-    enabled?: boolean;
     maxEntries?: number;
   }
 
@@ -1247,6 +1246,7 @@ declare global {
     username: string;
     apiToken: string;
     spaceKey: string;
+    parentPageId?: string;
     requestOptions?: RequestOptions;
   }
 
@@ -1254,8 +1254,11 @@ declare global {
     type: "jira" | "github" | "linear";
     baseUrl: string;
     username?: string;
-    apiToken: string;
+    apiToken?: string;
     projectKey?: string;
+    repositoryOwner?: string;
+    repositoryName?: string;
+    teamId?: string;
     requestOptions?: RequestOptions;
   }
   

@@ -1,0 +1,42 @@
+{
+  "models": [
+    {
+      "title": "GPT-4",
+      "provider": "openai",
+      "model": "gpt-4",
+      "apiKey": "your-openai-key-here"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "memory",
+      "params": {
+        "maxEntries": 1000
+      }
+    },
+    {
+      "name": "confluence",
+      "params": {
+        "baseUrl": "https://yourcompany.atlassian.net",
+        "username": "your-email@company.com",
+        "apiToken": "YOUR_ATLASSIAN_API_TOKEN_HERE",
+        "spaceKey": "YOUR_SPACE_KEY",
+        "parentPageId": "YOUR_PARENT_PAGE_ID"
+      }
+    }
+  ],
+  "ticketSystem": {
+    "type": "jira",
+    "baseUrl": "https://yourcompany.atlassian.net",
+    "username": "your-email@company.com",
+    "apiToken": "YOUR_ATLASSIAN_API_TOKEN_HERE",
+    "projectKey": "YOUR_PROJECT_KEY"
+  },
+  "confluenceConfig": {
+    "baseUrl": "https://yourcompany.atlassian.net",
+    "username": "your-email@company.com", 
+    "apiToken": "YOUR_ATLASSIAN_API_TOKEN_HERE",
+    "spaceKey": "YOUR_SPACE_KEY",
+    "parentPageId": "YOUR_PARENT_PAGE_ID"
+  }
+}

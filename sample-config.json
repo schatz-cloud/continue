@@ -34,7 +34,7 @@
   },
   "confluenceConfig": {
     "baseUrl": "https://yourcompany.atlassian.net",
-    "username": "your-email@company.com", 
+    "username": "your-email@company.com",
     "apiToken": "YOUR_ATLASSIAN_API_TOKEN_HERE",
     "spaceKey": "YOUR_SPACE_KEY",
     "parentPageId": "YOUR_PARENT_PAGE_ID"

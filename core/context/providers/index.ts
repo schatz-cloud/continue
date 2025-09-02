@@ -5,6 +5,7 @@ import { Telemetry } from "../../util/posthog";
 import ClipboardContextProvider from "./ClipboardContextProvider";
 import CodebaseContextProvider from "./CodebaseContextProvider";
 import CodeContextProvider from "./CodeContextProvider";
+import ConfluenceContextProvider from "./ConfluenceContextProvider";
 import ContinueProxyContextProvider from "./ContinueProxyContextProvider";
 import CurrentFileContextProvider from "./CurrentFileContextProvider";
 import DatabaseContextProvider from "./DatabaseContextProvider";
@@ -22,6 +23,7 @@ import GreptileContextProvider from "./GreptileContextProvider";
 import HttpContextProvider from "./HttpContextProvider";
 import JiraIssuesContextProvider from "./JiraIssuesContextProvider/";
 import MCPContextProvider from "./MCPContextProvider";
+import MemoryContextProvider from "./MemoryContextProvider";
 import OpenFilesContextProvider from "./OpenFilesContextProvider";
 import OSContextProvider from "./OSContextProvider";
 import PostgresContextProvider from "./PostgresContextProvider";
@@ -71,6 +73,8 @@ export const Providers: (typeof BaseContextProvider)[] = [
   GitCommitContextProvider,
   ClipboardContextProvider,
   RulesContextProvider,
+  MemoryContextProvider,
+  ConfluenceContextProvider,
 ];
 
 export function contextProviderClassFromName(

@@ -15,3 +15,6 @@ export { searchWebTool } from "./searchWeb";
 export { viewDiffTool } from "./viewDiff";
 export { viewRepoMapTool } from "./viewRepoMap";
 export { viewSubdirectoryTool } from "./viewSubdirectory";
+export { createTicketTool, updateTicketTool } from "./ticketTools";
+export { createADRTool } from "./confluenceTools";
+export { searchMemoryTool, addMemoryTool } from "./memoryTools";

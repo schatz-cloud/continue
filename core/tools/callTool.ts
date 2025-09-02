@@ -18,6 +18,12 @@ import { searchWebImpl } from "./implementations/searchWeb";
 import { viewDiffImpl } from "./implementations/viewDiff";
 import { viewRepoMapImpl } from "./implementations/viewRepoMap";
 import { viewSubdirectoryImpl } from "./implementations/viewSubdirectory";
+import {
+  createTicketImpl,
+  updateTicketImpl,
+} from "./implementations/ticketTools";
+import { createADRImpl } from "./implementations/confluenceTools";
+import { searchMemoryImpl, addMemoryImpl } from "./implementations/memoryTools";
 import { safeParseToolCallArgs } from "./parseArgs";
 
 async function callHttpTool(
@@ -173,6 +179,16 @@ export async function callBuiltInTool(
       return await viewRepoMapImpl(args, extras);
     case BuiltInToolNames.ViewSubdirectory:
       return await viewSubdirectoryImpl(args, extras);
+    case BuiltInToolNames.CreateTicket:
+      return await createTicketImpl(args, extras);
+    case BuiltInToolNames.UpdateTicket:
+      return await updateTicketImpl(args, extras);
+    case BuiltInToolNames.CreateADR:
+      return await createADRImpl(args, extras);
+    case BuiltInToolNames.SearchMemory:
+      return await searchMemoryImpl(args, extras);
+    case BuiltInToolNames.AddMemory:
+      return await addMemoryImpl(args, extras);
     default:
       throw new Error(`Tool "${functionName}" not found`);
   }

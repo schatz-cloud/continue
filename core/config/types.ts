@@ -1232,6 +1232,31 @@ declare global {
     analytics?: AnalyticsConfig;
     docs?: SiteIndexingConfig[];
     tools: Tool[];
+    memory?: MemoryConfig;
+    confluence?: ConfluenceConfig;
+    ticketSystem?: TicketSystemConfig;
+  }
+
+  export interface MemoryConfig {
+    enabled?: boolean;
+    maxEntries?: number;
+  }
+
+  export interface ConfluenceConfig {
+    baseUrl: string;
+    username: string;
+    apiToken: string;
+    spaceKey: string;
+    requestOptions?: RequestOptions;
+  }
+
+  export interface TicketSystemConfig {
+    type: "jira" | "github" | "linear";
+    baseUrl: string;
+    username?: string;
+    apiToken: string;
+    projectKey?: string;
+    requestOptions?: RequestOptions;
   }
   
   export interface BrowserSerializedContinueConfig {

@@ -14,6 +14,11 @@ export enum BuiltInToolNames {
   RequestRule = "request_rule",
   FetchUrlContent = "fetch_url_content",
   CodebaseTool = "codebase",
+  CreateTicket = "create_ticket",
+  UpdateTicket = "update_ticket",
+  CreateADR = "create_adr",
+  SearchMemory = "search_memory",
+  AddMemory = "add_memory",
 
   // excluded from allTools for now
   ViewRepoMap = "view_repo_map",

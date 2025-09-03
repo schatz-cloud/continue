@@ -12,12 +12,16 @@ import { getExtensionVersion } from "./util/util";
 export { default as buildTimestamp } from "./.buildTimestamp";
 
 async function dynamicImportAndActivate(context: vscode.ExtensionContext) {
+  console.log("Continue extension: Setting up CA...");
   await setupCa();
+  console.log("Continue extension: Importing activation module...");
   const { activateExtension } = await import("./activation/activate");
+  console.log("Continue extension: Calling activateExtension...");
   return await activateExtension(context);
 }
 
 export function activate(context: vscode.ExtensionContext) {
+  console.log("Continue extension: Starting activation...");
   return dynamicImportAndActivate(context).catch((e) => {
     console.log("Error activating extension: ", e);
     Telemetry.capture(

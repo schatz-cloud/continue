@@ -5,7 +5,6 @@ import { Telemetry } from "../../util/posthog";
 import ClipboardContextProvider from "./ClipboardContextProvider";
 import CodebaseContextProvider from "./CodebaseContextProvider";
 import CodeContextProvider from "./CodeContextProvider";
-import ConfluenceContextProvider from "./ConfluenceContextProvider";
 import ContinueProxyContextProvider from "./ContinueProxyContextProvider";
 import CurrentFileContextProvider from "./CurrentFileContextProvider";
 import DatabaseContextProvider from "./DatabaseContextProvider";
@@ -23,7 +22,6 @@ import GreptileContextProvider from "./GreptileContextProvider";
 import HttpContextProvider from "./HttpContextProvider";
 import JiraIssuesContextProvider from "./JiraIssuesContextProvider/";
 import MCPContextProvider from "./MCPContextProvider";
-import MemoryContextProvider from "./MemoryContextProvider";
 import OpenFilesContextProvider from "./OpenFilesContextProvider";
 import OSContextProvider from "./OSContextProvider";
 import PostgresContextProvider from "./PostgresContextProvider";
@@ -34,6 +32,9 @@ import SearchContextProvider from "./SearchContextProvider";
 import TerminalContextProvider from "./TerminalContextProvider";
 import URLContextProvider from "./URLContextProvider";
 import WebContextProvider from "./WebContextProvider";
+
+import MemoryContextProvider from "./MemoryContextProvider";
+import ConfluenceContextProvider from "./ConfluenceContextProvider";
 
 /**
  * Note: We are currently omitting the following providers due to bugs:

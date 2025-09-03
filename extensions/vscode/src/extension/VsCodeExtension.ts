@@ -85,8 +85,10 @@ export class VsCodeExtension {
   private ARBITRARY_TYPING_DELAY = 2000;
 
   constructor(context: vscode.ExtensionContext) {
-    // Register auth provider
-    this.workOsAuthProvider = new WorkOsAuthProvider(context, this.uriHandler);
+    console.log("Continue extension: VsCodeExtension constructor started");
+    try {
+      // Register auth provider
+      this.workOsAuthProvider = new WorkOsAuthProvider(context, this.uriHandler);
 
     void this.workOsAuthProvider.refreshSessions();
     context.subscriptions.push(this.workOsAuthProvider);
@@ -358,20 +360,27 @@ export class VsCodeExtension {
       ),
     );
 
-    // Commands
-    registerAllCommands(
-      context,
-      this.ide,
-      context,
-      this.sidebar,
-      this.consoleView,
-      this.configHandler,
-      this.verticalDiffManager,
-      this.battery,
-      quickEdit,
-      this.core,
-      this.editDecorationManager,
-    );
+    console.log("Continue extension: Registering commands...");
+    try {
+      // Commands
+      registerAllCommands(
+        context,
+        this.ide,
+        context,
+        this.sidebar,
+        this.consoleView,
+        this.configHandler,
+        this.verticalDiffManager,
+        this.battery,
+        quickEdit,
+        this.core,
+        this.editDecorationManager,
+      );
+      console.log("Continue extension: Commands registered successfully");
+    } catch (error) {
+      console.error("Continue extension: Failed to register commands:", error);
+      throw error;
+    }
 
     // Disabled due to performance issues
     // registerDebugTracker(this.sidebar.webviewProtocol, this.ide);
@@ -564,6 +573,12 @@ export class VsCodeExtension {
         void this.core.invoke("config/ideSettingsUpdate", settings);
       }
     });
+    
+    console.log("Continue extension: VsCodeExtension constructor completed successfully");
+    } catch (error) {
+      console.error("Continue extension: VsCodeExtension constructor failed:", error);
+      throw error;
+    }
   }
 
   static continueVirtualDocumentScheme = EXTENSION_NAME;

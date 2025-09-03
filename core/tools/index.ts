@@ -28,6 +28,12 @@ export const getConfigDependentToolDefinitions = (
   toolDefinitions.editFileTool,
   // Web search is only available for signed-in users
   ...(params.isSignedIn ? [toolDefinitions.searchWebTool] : []),
+  // Memory tools are always available
+  toolDefinitions.searchMemoryTool,
+  toolDefinitions.addMemoryTool,
+  toolDefinitions.createTicketTool,
+  toolDefinitions.updateTicketTool,
+  toolDefinitions.createADRTool,
   ...(params.enableExperimentalTools
     ? [
         toolDefinitions.viewRepoMapTool,

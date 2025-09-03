@@ -33,8 +33,8 @@ import TerminalContextProvider from "./TerminalContextProvider";
 import URLContextProvider from "./URLContextProvider";
 import WebContextProvider from "./WebContextProvider";
 
-import MemoryContextProvider from "./MemoryContextProvider";
-import ConfluenceContextProvider from "./ConfluenceContextProvider";
+// import MemoryContextProvider from "./MemoryContextProvider";
+// import ConfluenceContextProvider from "./ConfluenceContextProvider";
 
 /**
  * Note: We are currently omitting the following providers due to bugs:
@@ -74,8 +74,8 @@ export const Providers: (typeof BaseContextProvider)[] = [
   GitCommitContextProvider,
   ClipboardContextProvider,
   RulesContextProvider,
-  MemoryContextProvider,
-  ConfluenceContextProvider,
+  // MemoryContextProvider,
+  // ConfluenceContextProvider,
 ];
 
 export function contextProviderClassFromName(

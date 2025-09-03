@@ -4,7 +4,7 @@ import * as vscode from "vscode";
 
 import { VsCodeExtension } from "../extension/VsCodeExtension";
 import registerQuickFixProvider from "../lang-server/codeActions";
-import { getExtensionVersion, isUnsupportedPlatform } from "../util/util";
+import { getExtensionVersion, isUnsupportedPlatform, getPlatform, getArchitecture } from "../util/util";
 
 import { GlobalContext } from "core/util/GlobalContext";
 import { VsCodeContinueApi } from "./api";
@@ -18,7 +18,7 @@ export async function activateExtension(context: vscode.ExtensionContext) {
   );
 
   if (platformCheck.isUnsupported && !hasShownUnsupportedPlatformWarning) {
-    const platformTarget = "windows-arm64";
+    const platformTarget = `${getPlatform()}-${getArchitecture()}`;
 
     globalContext.update("hasShownUnsupportedPlatformWarning", true);
     void vscode.window.showInformationMessage(
